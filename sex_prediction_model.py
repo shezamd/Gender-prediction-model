@@ -53,20 +53,20 @@ x_train, x_test, y_train, y_test = train_test_split(x_scaled, labels, train_size
 
 # code to find best k value
 
-# accuracies = []
-# for k in range(41, 101):
-#     sex_prediction_model = KNeighborsClassifier(n_neighbors = k)
-#     sex_prediction_model.fit(x_train, y_train)
-#     score = sex_prediction_model.score(x_test, y_test)
-#     accuracies.append(score) 
+accuracies = []
+for k in range(41, 101):
+    sex_prediction_model = KNeighborsClassifier(n_neighbors = k)
+    sex_prediction_model.fit(x_train, y_train)
+    score = sex_prediction_model.score(x_test, y_test)
+    accuracies.append(score) 
 
-# print(max(accuracies))
-# k_list = range(41, 101)
-# plt.plot(k_list, accuracies)
-# plt.xlabel("k")
-# plt.ylabel("Score ")
-# plt.title("Sex Classifier Accuracy")
-# plt.show()
+print(max(accuracies))
+k_list = range(41, 101)
+plt.plot(k_list, accuracies)
+plt.xlabel("k")
+plt.ylabel("Score ")
+plt.title("Sex Classifier Accuracy")
+plt.show()
 
 # print(max(accuracies))
 
